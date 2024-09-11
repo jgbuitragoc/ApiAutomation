@@ -1,0 +1,10 @@
+{
+  "name": "Rice",
+  "trademark": "Diana",
+  "stock": 10,
+  "price": 3000.00,
+  "description": "Delicious and nutritive rice.",
+  "tags": "id",
+  "active": true,
+  "id": "1"
+}
