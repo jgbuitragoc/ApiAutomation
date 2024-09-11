@@ -3,7 +3,6 @@ package com.testing.api.requests;
 import com.google.gson.Gson;
 import com.testing.api.models.Client;
 import com.testing.api.utils.Constants;
-import com.testing.api.utils.JsonFileReader;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import net.datafaker.Faker;
@@ -73,16 +72,15 @@ public class ClientRequest extends BaseRequest {
         return jsonPath.getList("", Client.class);
     }
 
-    public Response createDefaultClient() {
-        JsonFileReader jsonFile = new JsonFileReader();
-        return this.createClient(jsonFile.getClientByJson(Constants.DEFAULT_CLIENT_FILE_PATH));
-    }
-
     public Client getClientEntity(String clientJson) {
         Gson gson = new Gson();
         return gson.fromJson(clientJson, Client.class);
     }
 
+    /**
+     * Create n quantity of clients with datafaker
+     * @param quantity of clients to be created
+     */
     public void createDefaultClients(int quantity){
         Faker faker = new Faker();
         Client client;

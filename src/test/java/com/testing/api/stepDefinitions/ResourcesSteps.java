@@ -115,6 +115,6 @@ public class ResourcesSteps {
         for (Resource res : resourcesList) {
             resourcesRequest.deleteResource(String.valueOf(res.getId()));
         }
-        logger.info("-------------- {} CLIENTS DELETED----------------", resourcesList.size());
+        logger.info("-------------- {} RESOURCES DELETED----------------", resourcesList.size());
     }
 }

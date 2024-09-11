@@ -82,6 +82,10 @@ public class ResourcesRequest extends BaseRequest {
         return gson.fromJson(resourceJson, Resource.class);
     }
 
+    /**
+     * Create n quantity of resources with datafaker
+     * @param quantity of resources to be created
+     */
     public void createDefaultResources(int quantity) {
         Faker faker = new Faker();
         Resource resource;
