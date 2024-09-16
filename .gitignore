@@ -1,3 +1,5 @@
 .idea
 target
 restassured_api.iml
+allure-report
+allure-results

@@ -20,8 +20,19 @@
         <rest.assured.version>5.3.1</rest.assured.version>
         <junit.version>5.10.0</junit.version>
         <log4j.version>2.20.0</log4j.version>
+        <allure.version>2.24.0</allure.version>
     </properties>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-bom</artifactId>
+                <version>${allure.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- Cucumber dependencies -->
         <dependency>
@@ -93,6 +104,17 @@
             <groupId>net.datafaker</groupId>
             <artifactId>datafaker</artifactId>
             <version>2.3.1</version>
+        </dependency>
+        <!-- Dependencies for Allure -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
