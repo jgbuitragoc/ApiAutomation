@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"c340646e0c8441a289ad5fb91e047811","name":"Resources testing CRUD","statistic":{"failed":0,"broken":1,"skipped":0,"passed":1,"unknown":0,"total":2}},{"uid":"8f801cea398e0679e8723a3063797536","name":"Client testing CRUD","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
