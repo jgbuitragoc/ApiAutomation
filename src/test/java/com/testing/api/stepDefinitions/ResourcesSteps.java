@@ -57,7 +57,7 @@ public class ResourcesSteps {
 
     @And("validates the response with resource list JSON schema")
     public void validatesTheResponseWithResourceListJSONSchema() {
-        String path = "schemas/resourceListSchema.json";
+        String path = "./schemas/resourceListSchema.json";
         Assert.assertTrue(resourcesRequest.validateSchema(response, path));
         logger.info("Successfully Validated schema from Resource List object");
     }
@@ -65,7 +65,7 @@ public class ResourcesSteps {
 
     @And("validates the response with resource JSON schema")
     public void validatesTheResponseWithResourceJSONSchema() {
-        String path = "schemas/resourceSchema.json";
+        String path = "./schemas/resourceSchema.json";
         Assert.assertTrue(resourcesRequest.validateSchema(response, path));
         logger.info("Successfully Validated schema from Resource object");
     }
