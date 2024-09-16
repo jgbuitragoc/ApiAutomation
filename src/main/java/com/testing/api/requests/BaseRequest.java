@@ -4,11 +4,17 @@ import com.testing.api.utils.Constants;
 import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class BaseRequest {
+
+    private static final Logger logger = LogManager.getLogger(BaseRequest.class);
+
+
     /**
      * This is a function to read elements using rest-assured
      *
@@ -89,16 +95,13 @@ public class BaseRequest {
      *
      * @param response   the API response
      * @param schemaPath the schema file path in the system
-     * @return true if the response schema matches the json schema, return false if it fails
+     * @return true if the response schema matches the json schema, AssertionError if assertion fails
      */
-    public boolean validateSchema(Response response, String schemaPath) {
-        try {
-            response.then()
-                    .assertThat()
-                    .body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
-            return true;
-        } catch (AssertionError e) {
-            return false;
-        }
+    public boolean validateSchema(Response response, String schemaPath) throws AssertionError {
+        logger.info("Json response being validated: {}", response.getBody().asString());
+        response.then()
+                .assertThat()
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
+        return true;
     }
 }
