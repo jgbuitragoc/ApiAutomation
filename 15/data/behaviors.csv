@@ -1,0 +1,5 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","Client testing CRUD","Update and delete a New Client","0","0","1","0","0"
+"","Resources testing CRUD","Get the list of active resources","0","0","1","0","0"
+"","Client testing CRUD","Change the phone number of the first Client named Laura","0","0","1","0","0"
+"","Resources testing CRUD","Update the last created resource","0","0","1","0","0"
