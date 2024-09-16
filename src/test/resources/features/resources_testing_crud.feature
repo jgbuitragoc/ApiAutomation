@@ -1,4 +1,7 @@
 @active
+@allure.label.layer:web
+@allure.label.owner:jgbuitragoc
+@allure.label.page:/{org}/{repo}/labels
 Feature: Resources testing CRUD
 
   @resourcesPost
