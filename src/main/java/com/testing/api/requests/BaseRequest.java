@@ -95,12 +95,11 @@ public class BaseRequest {
      *
      * @param response   the API response
      * @param schemaPath the schema file path in the system
-     * @return true if the response schema matches the json schema, AssertionError if assertion fails
+     * @return true if the response schema matches the json schema, false if it fails
      */
     public boolean validateSchema(Response response, String schemaPath) {
        try {
-           String responseBody = response.getBody().asString();
-           logger.info("Json response body being validated: {}", responseBody);
+           logger.info("Json response body being validated: {}", response.getBody().asString());
            response.then()
                    .assertThat()
                    .body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
