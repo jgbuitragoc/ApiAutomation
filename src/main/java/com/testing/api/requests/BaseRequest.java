@@ -98,8 +98,7 @@ public class BaseRequest {
      * @return true if the response schema matches the json schema, AssertionError if assertion fails
      */
     public boolean validateSchema(Response response, String schemaPath) throws AssertionError {
-        String responseBody = response.getBody().asString();
-        logger.info("Json response body being validated: {}", responseBody);
+        logger.info("Json response being validated: {}", response.getBody().asString());
         response.then()
                 .assertThat()
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
